@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de IMC — NutriVida</title>
+<meta name="description" content="Calculadora interativa do projeto NutriVida: informe seus dados de corpo e rotina e receba, na hora, seu IMC, gasto calórico, macronutrientes e orientações personalizadas.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="34" height="34">
+          <path d="M24 6c6 4 9 10 9 16 0 6-4 11-9 13-5-2-9-7-9-13 0-6 3-12 9-16Z" fill="var(--leaf)"/>
+          <path d="M24 10c3.5 3 5.5 7 5.5 11 0 4.3-2.6 8-5.5 9.6" fill="none" stroke="var(--forest)" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-word">nutri<span class="brand-word-accent">vida</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="index.html#projeto">O projeto</a>
+      <a href="index.html#metodologia">Metodologia</a>
+      <a href="index.html#avaliacoes">Avalie</a>
+      <a href="index.html#equipe">Equipe</a>
+      <a class="nav-cta is-active" href="calculadora.html">Calculadora de IMC</a>
+    </nav>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navegação móvel">
+    <a href="index.html#projeto">O projeto</a>
+    <a href="index.html#metodologia">Metodologia</a>
+    <a href="index.html#avaliacoes">Avalie</a>
+    <a href="index.html#equipe">Equipe</a>
+    <a class="nav-cta is-active" href="calculadora.html">Calculadora de IMC</a>
+  </nav>
+</header>
+
+<main id="conteudo">
+
+  <section class="assessment" id="avaliacao">
+    <div class="wrap">
+      <p class="section-kicker">Calculadora NutriVida</p>
+      <h2 class="reveal">Vamos montar o seu panorama</h2>
+      <p class="assessment-lead reveal">Informe seus dados de corpo e rotina e receba, na hora, seu IMC, gasto calórico, macronutrientes e orientações. Suas respostas não ficam salvas: cada vez que você abre a página, o formulário começa zerado, e nada é enviado para nenhum servidor.</p>
+
+      <div class="assessment-card">
+
+        <div class="progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-label="Progresso da avaliação">
+          <div class="progress-leaf active" data-step="1">
+            <svg viewBox="0 0 24 24"><path d="M12 3c4 2.5 6 6 6 10a6 6 0 0 1-12 0c0-4 2-7.5 6-10Z"/></svg>
+            <span>Corpo</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-leaf" data-step="2">
+            <svg viewBox="0 0 24 24"><path d="M12 3c4 2.5 6 6 6 10a6 6 0 0 1-12 0c0-4 2-7.5 6-10Z"/></svg>
+            <span>Rotina</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-leaf" data-step="3">
+            <svg viewBox="0 0 24 24"><path d="M12 3c4 2.5 6 6 6 10a6 6 0 0 1-12 0c0-4 2-7.5 6-10Z"/></svg>
+            <span>Hábitos</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-leaf" data-step="4">
+            <svg viewBox="0 0 24 24"><path d="M12 3c4 2.5 6 6 6 10a6 6 0 0 1-12 0c0-4 2-7.5 6-10Z"/></svg>
+            <span>Objetivo</span>
+          </div>
+        </div>
+
+        <form id="nutri-form" novalidate autocomplete="off">
+
+          <fieldset class="form-step is-active" data-step="1">
+            <legend>Fale um pouco sobre seu corpo</legend>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="altura">Altura (cm)</label>
+                <input type="number" id="altura" name="altura" min="100" max="230" placeholder="Ex: 170" required>
+                <p class="field-error" data-error-for="altura">Informe uma altura entre 100 e 230 cm.</p>
+              </div>
+              <div class="field">
+                <label for="peso">Peso (kg)</label>
+                <input type="number" id="peso" name="peso" min="30" max="250" step="0.1" placeholder="Ex: 65" required>
+                <p class="field-error" data-error-for="peso">Informe um peso entre 30 e 250 kg.</p>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="idade">Idade</label>
+                <input type="number" id="idade" name="idade" min="10" max="100" placeholder="Ex: 16" required>
+                <p class="field-error" data-error-for="idade">Informe uma idade entre 10 e 100 anos.</p>
+              </div>
+              <div class="field">
+                <label id="sexo-label">Sexo biológico</label>
+                <div class="pill-group" role="radiogroup" aria-labelledby="sexo-label">
+                  <input type="radio" id="sexo-f" name="sexo" value="feminino" required>
+                  <label for="sexo-f" class="pill">Feminino</label>
+                  <input type="radio" id="sexo-m" name="sexo" value="masculino">
+                  <label for="sexo-m" class="pill">Masculino</label>
+                </div>
+                <p class="field-hint">Usado apenas para calcular seu metabolismo basal.</p>
+              </div>
+            </div>
+
+            <div class="step-actions">
+              <span></span>
+              <button type="button" class="btn btn-primary" data-next>Próximo</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-step" data-step="2">
+            <legend>Como é a sua rotina?</legend>
+
+            <div class="field">
+              <label id="atividade-label">Nível de atividade física</label>
+              <div class="choice-grid" role="radiogroup" aria-labelledby="atividade-label">
+                <input type="radio" id="at-1" name="atividade" value="1.2" required>
+                <label for="at-1" class="choice-card">
+                  <strong>Sedentário</strong>
+                  <span>Pouco ou nenhum exercício</span>
+                </label>
+                <input type="radio" id="at-2" name="atividade" value="1.375">
+                <label for="at-2" class="choice-card">
+                  <strong>Leve</strong>
+                  <span>Exercício leve 1–3x/semana</span>
+                </label>
+                <input type="radio" id="at-3" name="atividade" value="1.55">
+                <label for="at-3" class="choice-card">
+                  <strong>Moderado</strong>
+                  <span>Exercício moderado 3–5x/semana</span>
+                </label>
+                <input type="radio" id="at-4" name="atividade" value="1.725">
+                <label for="at-4" class="choice-card">
+                  <strong>Intenso</strong>
+                  <span>Exercício pesado quase todo dia</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="sono">Horas de sono por noite: <output id="sono-out">7h</output></label>
+                <input type="range" id="sono" name="sono" min="3" max="12" value="7">
+              </div>
+              <div class="field">
+                <label for="agua">Copos de água por dia (200ml): <output id="agua-out">6</output></label>
+                <input type="range" id="agua" name="agua" min="0" max="16" value="6">
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="refeicoes">Refeições por dia: <output id="refeicoes-out">3</output></label>
+                <input type="range" id="refeicoes" name="refeicoes" min="1" max="6" value="3">
+              </div>
+              <div class="field">
+                <label for="tela">Horas de tela por dia (lazer): <output id="tela-out">4h</output></label>
+                <input type="range" id="tela" name="tela" min="0" max="14" value="4">
+              </div>
+            </div>
+
+            <div class="step-actions">
+              <button type="button" class="btn btn-ghost" data-prev>Voltar</button>
+              <button type="button" class="btn btn-primary" data-next>Próximo</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-step" data-step="3">
+            <legend>Seus hábitos alimentares</legend>
+
+            <div class="field">
+              <label id="frutas-label">Com que frequência você come frutas e vegetais?</label>
+              <div class="choice-grid choice-grid-3" role="radiogroup" aria-labelledby="frutas-label">
+                <input type="radio" id="fr-raro" name="frutas" value="raro" required>
+                <label for="fr-raro" class="choice-card">
+                  <strong>Raramente</strong>
+                  <span>Poucas vezes por semana</span>
+                </label>
+                <input type="radio" id="fr-as" name="frutas" value="asvezes">
+                <label for="fr-as" class="choice-card">
+                  <strong>Às vezes</strong>
+                  <span>Quase todo dia</span>
+                </label>
+                <input type="radio" id="fr-diario" name="frutas" value="diario">
+                <label for="fr-diario" class="choice-card">
+                  <strong>Diariamente</strong>
+                  <span>Em quase toda refeição</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label id="ultra-label">Com que frequência você come ultraprocessados (salgadinhos, refrigerantes, fast food)?</label>
+              <div class="choice-grid choice-grid-3" role="radiogroup" aria-labelledby="ultra-label">
+                <input type="radio" id="up-raro" name="ultraprocessados" value="raro" required>
+                <label for="up-raro" class="choice-card">
+                  <strong>Raramente</strong>
+                  <span>Ocasionalmente</span>
+                </label>
+                <input type="radio" id="up-as" name="ultraprocessados" value="asvezes">
+                <label for="up-as" class="choice-card">
+                  <strong>Às vezes</strong>
+                  <span>Algumas vezes por semana</span>
+                </label>
+                <input type="radio" id="up-diario" name="ultraprocessados" value="diario">
+                <label for="up-diario" class="choice-card">
+                  <strong>Diariamente</strong>
+                  <span>Quase todos os dias</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="estresse">Nível de estresse percebido na rotina: <output id="estresse-out">Moderado</output></label>
+              <input type="range" id="estresse" name="estresse" min="1" max="5" value="3">
+              <p class="field-hint">1 é bem tranquilo, 5 é bastante intenso. Isso não é um diagnóstico, só um retrato da sua semana.</p>
+            </div>
+
+            <div class="step-actions">
+              <button type="button" class="btn btn-ghost" data-prev>Voltar</button>
+              <button type="button" class="btn btn-primary" data-next>Próximo</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-step" data-step="4">
+            <legend>Qual é o seu objetivo?</legend>
+
+            <div class="field">
+              <label id="objetivo-label">Objetivo principal</label>
+              <div class="choice-grid choice-grid-3" role="radiogroup" aria-labelledby="objetivo-label">
+                <input type="radio" id="obj-perder" name="objetivo" value="perder" required>
+                <label for="obj-perder" class="choice-card">
+                  <strong>Perder peso</strong>
+                  <span>Déficit calórico saudável</span>
+                </label>
+                <input type="radio" id="obj-manter" name="objetivo" value="manter">
+                <label for="obj-manter" class="choice-card">
+                  <strong>Manter o peso</strong>
+                  <span>Equilíbrio energético</span>
+                </label>
+                <input type="radio" id="obj-ganhar" name="objetivo" value="ganhar">
+                <label for="obj-ganhar" class="choice-card">
+                  <strong>Ganhar massa</strong>
+                  <span>Superávit calórico controlado</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label id="restricao-label">Restrições ou preferências alimentares</label>
+              <div class="check-grid" role="group" aria-labelledby="restricao-label">
+                <input type="checkbox" id="r-vegetariano" name="restricao" value="vegetariano">
+                <label for="r-vegetariano" class="choice-card choice-card-sm">Vegetariano</label>
+                <input type="checkbox" id="r-lactose" name="restricao" value="lactose">
+                <label for="r-lactose" class="choice-card choice-card-sm">Sem lactose</label>
+                <input type="checkbox" id="r-gluten" name="restricao" value="gluten">
+                <label for="r-gluten" class="choice-card choice-card-sm">Sem glúten</label>
+                <input type="checkbox" id="r-nenhuma" name="restricao" value="nenhuma">
+                <label for="r-nenhuma" class="choice-card choice-card-sm">Nenhuma</label>
+              </div>
+            </div>
+
+            <div class="step-actions">
+              <button type="button" class="btn btn-ghost" data-prev>Voltar</button>
+              <button type="submit" class="btn btn-primary">Ver minhas orientações</button>
+            </div>
+          </fieldset>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="results" id="resultados" hidden>
+    <div class="wrap">
+      <p class="section-kicker">Seu panorama</p>
+      <h2 id="results-greeting">Aqui estão as suas orientações</h2>
+      <p class="results-sub">Calculado com base no que você respondeu, em tempo real, no seu navegador.</p>
+      <a class="qr-jump" href="#qr-panel">Quer levar isso no celular? Veja o QR Code ↓</a>
+
+      <div class="gauges">
+        <div class="gauge-card">
+          <h3>Índice de Massa Corporal</h3>
+          <svg viewBox="0 0 220 130" class="imc-gauge">
+            <path d="M20 110 A90 90 0 0 1 200 110" fill="none" stroke="var(--track)" stroke-width="16" stroke-linecap="round"/>
+            <path id="imc-arc" d="M20 110 A90 90 0 0 1 200 110" fill="none" stroke="var(--leaf)" stroke-width="16" stroke-linecap="round"/>
+            <g id="imc-needle" transform="rotate(0 110 110)">
+              <line x1="110" y1="110" x2="110" y2="35" stroke="var(--forest)" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="110" cy="110" r="6" fill="var(--forest)"/>
+            </g>
+          </svg>
+          <p class="gauge-value"><span id="imc-value">--</span></p>
+          <p class="gauge-label" id="imc-classe">calculando…</p>
+        </div>
+
+        <div class="gauge-card">
+          <h3>Necessidade calórica diária</h3>
+          <svg viewBox="0 0 160 160" class="cal-ring">
+            <circle cx="80" cy="80" r="66" fill="none" stroke="var(--track)" stroke-width="14"/>
+            <circle id="cal-circle" cx="80" cy="80" r="66" fill="none" stroke="var(--mint)" stroke-width="14" stroke-linecap="round" transform="rotate(-90 80 80)"/>
+          </svg>
+          <p class="gauge-value"><span id="cal-value">--</span> kcal</p>
+          <p class="gauge-label" id="cal-classe">estimativa para seu objetivo</p>
+        </div>
+
+        <div class="gauge-card">
+          <h3>Hidratação recomendada</h3>
+          <svg viewBox="0 0 100 160" class="water-glass">
+            <path d="M20 10 L80 10 L70 150 L30 150 Z" fill="none" stroke="var(--forest)" stroke-width="4" stroke-linejoin="round"/>
+            <clipPath id="glass-clip">
+              <path d="M22 12 L78 12 L69 148 L31 148 Z"/>
+            </clipPath>
+            <rect id="water-fill" x="20" y="150" width="60" height="0" fill="var(--leaf)" clip-path="url(#glass-clip)"/>
+          </svg>
+          <p class="gauge-value"><span id="water-value">--</span> L</p>
+          <p class="gauge-label" id="water-classe">por dia</p>
+        </div>
+      </div>
+
+      <div class="secondary-panels">
+        <div class="macro-card">
+          <h3>Distribuição de macronutrientes sugerida</h3>
+          <div class="macro-content">
+            <svg viewBox="0 0 120 120" class="macro-donut">
+              <circle id="macro-track" cx="60" cy="60" r="50" fill="none" stroke="var(--track)" stroke-width="16"/>
+              <circle id="macro-protein" cx="60" cy="60" r="50" fill="none" stroke="var(--forest)" stroke-width="16" stroke-dasharray="314" stroke-dashoffset="314" transform="rotate(-90 60 60)"/>
+              <circle id="macro-carbs" cx="60" cy="60" r="50" fill="none" stroke="var(--leaf)" stroke-width="16" stroke-dasharray="314" stroke-dashoffset="314" transform="rotate(-90 60 60)"/>
+              <circle id="macro-fat" cx="60" cy="60" r="50" fill="none" stroke="var(--gold)" stroke-width="16" stroke-dasharray="314" stroke-dashoffset="314" transform="rotate(-90 60 60)"/>
+            </svg>
+            <ul class="macro-legend">
+              <li><span class="dot dot-protein"></span>Proteínas — <strong id="macro-protein-value">--</strong>g</li>
+              <li><span class="dot dot-carbs"></span>Carboidratos — <strong id="macro-carbs-value">--</strong>g</li>
+              <li><span class="dot dot-fat"></span>Gorduras — <strong id="macro-fat-value">--</strong>g</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="habits-card">
+          <h3>Seus hábitos vs. a referência usada pelo site</h3>
+          <div class="habit-bars" id="habit-bars"></div>
+        </div>
+      </div>
+
+      <div class="tips-panel">
+        <h3>Sugestões organizadas por tema</h3>
+        <div class="accordion" id="tips-accordion"></div>
+      </div>
+
+      <section class="qr-feature" id="qr-panel" aria-labelledby="qr-titulo">
+        <div class="qr-feature-copy">
+          <p class="qr-feature-kicker">Leve para o celular</p>
+          <h3 id="qr-titulo">Guarde seus resultados no celular</h3>
+          <p class="qr-feature-lead">Este QR Code guarda o seu <strong>IMC</strong>, as <strong>calorias</strong>, a <strong>água</strong> e as <strong>sugestões organizadas por tema</strong>. É só escanear e ler na tela do celular.</p>
+          <ol class="qr-steps">
+            <li><span aria-hidden="true">1</span>Abra a câmera do celular</li>
+            <li><span aria-hidden="true">2</span>Aponte para o QR Code</li>
+            <li><span aria-hidden="true">3</span>Toque no texto que aparecer na tela</li>
+          </ol>
+          <p class="qr-feature-note">Não precisa de internet nem de abrir nenhum site.</p>
+        </div>
+
+        <div class="qr-feature-code">
+          <div class="qr-frame">
+            <div class="qr-code-box" id="qr-code-box" role="img" aria-label="QR Code com os resultados e as sugestões por tema"></div>
+          </div>
+          <p class="qr-feature-caption">Escaneie para levar seus resultados</p>
+          <button type="button" class="btn btn-ghost btn-sm qr-retry" id="qr-retry-btn" hidden>Gerar QR Code novamente</button>
+          <p class="copy-feedback" id="copy-feedback" role="status" aria-live="polite"></p>
+        </div>
+
+        <details class="qr-details">
+          <summary>Ver o texto que está dentro do QR Code</summary>
+          <pre class="qr-panel-texto" id="qr-panel-texto"></pre>
+        </details>
+      </section>
+
+      <div class="results-actions">
+        <button type="button" class="btn btn-ghost" id="restart-btn">Refazer avaliação</button>
+      </div>
+    </div>
+  </section>
+
+  <p class="wrap disclaimer-standalone">As fórmulas usadas (IMC, Mifflin-St Jeor e distribuição de macronutrientes) são referências nutricionais amplamente reconhecidas, mas este é um projeto escolar e não substitui a avaliação de um médico ou nutricionista. Quer entender de onde vêm essas fórmulas? Veja a <a href="index.html#metodologia">metodologia do projeto</a>.</p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="footer-brand">nutri<span class="brand-word-accent">vida</span></p>
+    <p class="footer-meta">1º ano · Informática para Internet — Escola Pedro Ferreira Alves</p>
+  </div>
+</footer>
+
+<button type="button" class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

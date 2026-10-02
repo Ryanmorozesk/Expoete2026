@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutri Vida — Alimente hoje, transforme amanhã</title>
+<meta name="description" content="Projeto de feira de ciências da turma 1º Informática para Internet, Escola Pedro Ferreira Alves: um site interativo que transforma dados de corpo e rotina em orientações de alimentação e qualidade de vida.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#topo" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="34" height="34">
+          <path d="M24 6c6 4 9 10 9 16 0 6-4 11-9 13-5-2-9-7-9-13 0-6 3-12 9-16Z" fill="var(--leaf)"/>
+          <path d="M24 10c3.5 3 5.5 7 5.5 11 0 4.3-2.6 8-5.5 9.6" fill="none" stroke="var(--forest)" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-word">nutri<span class="brand-word-accent">vida</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a data-nav href="#projeto">O projeto</a>
+      <a data-nav href="#metodologia">Metodologia</a>
+      <a data-nav href="#avaliacoes">Avalie</a>
+      <a data-nav href="#equipe">Equipe</a>
+      <a class="nav-cta" href="calculadora.html">Calculadora de IMC</a>
+    </nav>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navegação móvel">
+    <a href="#projeto">O projeto</a>
+    <a href="#metodologia">Metodologia</a>
+    <a href="#avaliacoes">Avalie</a>
+    <a href="#equipe">Equipe</a>
+    <a class="nav-cta" href="calculadora.html">Calculadora de IMC</a>
+  </nav>
+</header>
+
+<main id="conteudo">
+
+  <section class="hero" id="topo">
+    <div class="wrap hero-inner">
+      <div class="hero-copy reveal">
+        <p class="hero-kicker">Projeto de feira de ciências</p>
+        <h1>Nutri Vida: alimente hoje,<br>transforme amanhã.</h1>
+        <p class="hero-lead">Um site interativo criado pela turma de <strong>Informática para Internet</strong> da <strong>Escola Pedro Ferreira Alves</strong>. Você informa dados sobre o seu corpo e sua rotina, e o sistema calcula, na hora, orientações de alimentação e qualidade de vida feitas sob medida para você.</p>
+        <div class="hero-actions">
+          <a href="calculadora.html" class="btn btn-primary">Começar minha avaliação</a>
+          <a href="#projeto" class="btn btn-text">Entender o projeto primeiro</a>
+        </div>
+        <dl class="hero-facts">
+          <div>
+            <dt>3 minutos</dt>
+            <dd>tempo médio da avaliação</dd>
+          </div>
+          <div>
+            <dt>4 etapas</dt>
+            <dd>corpo, rotina, hábitos e objetivo</dd>
+          </div>
+          <div>
+            <dt>100% local</dt>
+            <dd>os cálculos rodam no seu navegador</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 420" class="hero-svg">
+          <defs>
+            <!-- folha desenhada com a base na origem (0,0), apontando para cima -->
+            <g id="folha">
+              <path d="M0 0 C 20 -16 36 -50 0 -88 C -36 -50 -20 -16 0 0Z"/>
+              <path class="folha-nervura" d="M0 -6 L0 -70 M0 -30 L11 -42 M0 -30 L-11 -42 M0 -50 L8 -60 M0 -50 L-8 -60"/>
+            </g>
+          </defs>
+
+          <circle cx="210" cy="210" r="185" fill="var(--cream-deep)"/>
+          <ellipse cx="210" cy="386" rx="78" ry="9" fill="rgba(27,67,50,0.12)"/>
+
+          <g class="planta">
+            <!-- caule -->
+            <path d="M210 306 C 210 262 204 214 210 150" fill="none" stroke="var(--mid)" stroke-width="7" stroke-linecap="round"/>
+
+            <!-- folhas: o grupo de fora posiciona, o de dentro balança a partir da base -->
+            <g transform="translate(210 290) rotate(-58) scale(1.25)"><g class="folha-mov m1"><use href="#folha" fill="var(--mid)"/></g></g>
+            <g transform="translate(210 272) rotate(60) scale(1.3)"><g class="folha-mov m2"><use href="#folha" fill="var(--leaf)"/></g></g>
+            <g transform="translate(207 232) rotate(-46) scale(1.1)"><g class="folha-mov m3"><use href="#folha" fill="var(--leaf)"/></g></g>
+            <g transform="translate(207 212) rotate(48) scale(1.05)"><g class="folha-mov m4"><use href="#folha" fill="var(--mint)"/></g></g>
+            <g transform="translate(209 168) rotate(-16) scale(0.85)"><g class="folha-mov m5"><use href="#folha" fill="var(--mint)"/></g></g>
+            <g transform="translate(210 154) rotate(18) scale(0.95)"><g class="folha-mov m6"><use href="#folha" fill="var(--leaf)"/></g></g>
+          </g>
+
+          <!-- vaso -->
+          <path d="M156 322 L264 322 L254 374 Q252 386 240 386 L180 386 Q168 386 166 374 Z" fill="#C96F4A"/>
+          <rect x="148" y="304" width="124" height="22" rx="9" fill="#B85C38"/>
+          <ellipse cx="210" cy="306" rx="56" ry="6" fill="#5B3A29"/>
+          <path d="M210 340 c8 5 12 12 12 19 0 8-5 13-12 16 -7-3-12-8-12-16 0-7 4-14 12-19Z" fill="var(--cream)" opacity="0.92"/>
+
+          <g class="frutas">
+            <g transform="translate(78 214)"><g class="fruta"><path d="M0 -13C-12 -21 -26 -9 -22 9C-19 22 -8 28 0 24C8 28 19 22 22 9C26 -9 12 -21 0 -13Z" fill="#F2A093"/><path d="M0 -13C0 -21 3 -26 8 -28" stroke="#5B3A29" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M4 -21C10 -29 18 -27 20 -25C14 -19 8 -18 4 -21Z" fill="var(--leaf)"/><ellipse cx="-11" cy="-1" rx="3" ry="6" fill="#fff" opacity=".4"/></g></g>
+            <g transform="translate(344 214)"><g class="fruta f2"><circle r="21" fill="#F6C177"/><circle r="16.5" fill="#FBE0AE"/><path d="M0 -16V16M-16 0H16M-11 -11L11 11M11 -11L-11 11" stroke="#F6C177" stroke-width="2"/></g></g>
+            <g transform="translate(302 92)"><g class="fruta f3"><path d="M0 -17C10 -4 13 3 13 8A13 13 0 0 1 -13 8C-13 3 -10 -4 0 -17Z" fill="#9AD3E8"/><ellipse cx="-5" cy="6" rx="2.5" ry="5" fill="#fff" opacity=".55"/></g></g>
+          </g>
+
+          <g class="orbit-dots">
+            <circle cx="90" cy="120" r="5" fill="var(--mint)"/>
+            <circle cx="330" cy="140" r="4" fill="var(--leaf)"/>
+            <circle cx="100" cy="300" r="4" fill="var(--leaf)"/>
+            <circle cx="320" cy="290" r="6" fill="var(--mint)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider divider-a" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 C 200 60 400 0 600 30 C 800 60 1000 0 1200 30 L1200 60 L0 60 Z"></path></svg>
+  </div>
+
+  <section class="project" id="projeto">
+    <div class="wrap project-inner">
+      <div class="project-copy reveal">
+        <p class="section-kicker section-kicker-light">Sobre o projeto</p>
+        <h2>Um trabalho de Informática, feito para falar de saúde de verdade</h2>
+        <p class="project-lead">O NutriVida nasceu na sala do <strong>1º ano de Informática para Internet</strong> da <strong>Escola Pedro Ferreira Alves</strong>, como projeto para a feira de ciências da escola. A proposta uniu duas coisas que parecem distantes, mas conversam muito bem: programação e cuidado com o corpo.</p>
+        <p>Boa parte dos problemas de saúde que vemos no dia a dia — cansaço em excesso, alimentação desregulada, noites maldormidas — tem relação direta com hábitos simples. Só que entender o próprio corpo e saber o que fazer com essas informações nem sempre é fácil. Foi daí que surgiu a pergunta que guiou o projeto: <em>e se um site pudesse traduzir dados como altura, peso e rotina em orientações claras e pessoais, na hora?</em></p>
+        <p>Foi assim que decidimos aplicar o que estamos aprendendo em Informática para Internet — HTML para estruturar, CSS para dar forma e JavaScript para dar vida aos cálculos — em algo com propósito real: uma ferramenta simples, bonita e educativa, que mostra como a tecnologia pode apoiar escolhas mais saudáveis.</p>
+        <p>O objetivo não é diagnosticar ninguém, e sim abrir uma porta: mostrar, com números e clareza, como pequenas mudanças de rotina podem fazer diferença — e como a lógica de programação pode ser usada para o bem-estar das pessoas.</p>
+      </div>
+
+      <aside class="project-card reveal" aria-label="Ficha do projeto">
+        <p class="project-card-label">Ficha do projeto</p>
+        <dl>
+          <div class="project-card-row">
+            <dt>Escola</dt>
+            <dd>Escola Pedro Ferreira Alves</dd>
+          </div>
+          <div class="project-card-row">
+            <dt>Turma</dt>
+            <dd>1º ano · Informática para Internet</dd>
+          </div>
+          <div class="project-card-row">
+            <dt>Tema</dt>
+            <dd>Melhoria da alimentação e da rotina</dd>
+          </div>
+          <div class="project-card-row">
+            <dt>Tecnologias</dt>
+            <dd>HTML, CSS e JavaScript</dd>
+          </div>
+          <div class="project-card-row">
+            <dt>Evento</dt>
+            <dd>EXPOETE</dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+
+    <div class="wrap">
+      <div class="pillars">
+        <div class="pillar reveal">
+          <span class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path class="icon-filled" d="M12 3c4 2.5 6 6 6 10a6 6 0 0 1-12 0c0-4 2-7.5 6-10Z"/></svg>
+          </span>
+          <h3>Alimentação</h3>
+          <p>Orientações práticas, baseadas em referências nutricionais reais, para melhorar a qualidade das refeições do dia a dia.</p>
+        </div>
+        <div class="pillar reveal">
+          <span class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><path d="M12 7.2v5l3.2 2.6"/></svg>
+          </span>
+          <h3>Rotina</h3>
+          <p>Sono, hidratação, atividade física e tempo de tela entram na conta, porque saúde não se resume ao prato.</p>
+        </div>
+        <div class="pillar reveal">
+          <span class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 20 L4 12 L10 12 L10 20 M14 20 L14 6 L20 6 L20 20"/></svg>
+          </span>
+          <h3>Tecnologia</h3>
+          <p>Um sistema que transforma números em orientações, mostrando o poder da lógica de programação aplicada à vida real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reasons" id="importancia">
+    <div class="wrap">
+      <p class="section-kicker">Por que isso importa</p>
+      <h2 class="reveal">Pequenos hábitos, repetidos todos os dias, mudam tudo</h2>
+      <p class="reasons-lead reveal">Especialistas em saúde costumam apontar três pilares básicos de rotina saudável para adolescentes. O NutriVida usa exatamente esses três pilares como base dos seus cálculos:</p>
+
+      <div class="reasons-grid">
+        <div class="reason-card reveal">
+          <span class="reason-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg></span>
+          <span class="reason-number">01</span>
+          <h3>Sono</h3>
+          <p>De forma geral, recomenda-se de <strong>8 a 10 horas</strong> de sono por noite para adolescentes. Dormir pouco afeta apetite, humor e concentração.</p>
+        </div>
+        <div class="reason-card reveal">
+          <span class="reason-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="14" cy="5" r="2"/><path d="M6 21l3-6 3 2 2-5M9 15l-3-2 5-4 4 2 3 3"/></svg></span>
+          <span class="reason-number">02</span>
+          <h3>Atividade física</h3>
+          <p>A orientação usual é de pelo menos <strong>60 minutos diários</strong> de atividade moderada a intensa — de uma caminhada a um esporte em equipe.</p>
+        </div>
+        <div class="reason-card reveal">
+          <span class="reason-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c4 4.5 6 7.5 6 10.5a6 6 0 0 1-12 0C6 10.5 8 7.5 12 3Z"/></svg></span>
+          <span class="reason-number">03</span>
+          <h3>Hidratação</h3>
+          <p>Uma regra prática usada por nutricionistas é consumir cerca de <strong>35 ml de água por kg</strong> de peso corporal ao longo do dia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider divider-b" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 C 200 0 400 60 600 30 C 800 0 1000 60 1200 30 L1200 60 L0 60 Z"></path></svg>
+  </div>
+
+  <section class="methodology" id="metodologia">
+    <div class="wrap">
+      <p class="section-kicker section-kicker-light">Metodologia</p>
+      <h2 class="reveal">Como o site calcula suas orientações</h2>
+      <p class="methodology-lead reveal">Nada aqui é "achismo": cada resultado vem de uma fórmula nutricional conhecida, calculada em tempo real pelo JavaScript a partir do que você responde. Veja o raciocínio por trás de cada número.</p>
+
+      <div class="formula-list">
+        <article class="formula-card reveal">
+          <h3><span class="formula-index">1</span> Índice de Massa Corporal (IMC)</h3>
+          <p class="formula-expr">IMC = peso (kg) ÷ altura (m)²</p>
+          <p>Classifica a relação entre peso e altura em faixas (abaixo do peso, peso adequado, sobrepeso, obesidade). É uma triagem simples, não um diagnóstico — por isso o site sempre mostra a faixa junto de outras informações.</p>
+        </article>
+
+        <article class="formula-card reveal">
+          <h3><span class="formula-index">2</span> Taxa metabólica basal — fórmula de Mifflin-St Jeor</h3>
+          <p class="formula-expr">Homens: TMB = 10×peso + 6,25×altura − 5×idade + 5<br>Mulheres: TMB = 10×peso + 6,25×altura − 5×idade − 161</p>
+          <p>Estima quantas calorias o corpo gastaria em repouso completo. É o ponto de partida para calcular a necessidade calórica total do dia.</p>
+        </article>
+
+        <article class="formula-card reveal">
+          <h3><span class="formula-index">3</span> Gasto calórico total (TDEE)</h3>
+          <p class="formula-expr">TDEE = TMB × fator de atividade</p>
+          <p>O fator de atividade varia de 1,2 (sedentário) a 1,725 (intenso). Depois, o valor é ajustado conforme o objetivo: −15% para perda de peso, +12% para ganho de massa, sem alteração para manutenção.</p>
+        </article>
+
+        <article class="formula-card reveal">
+          <h3><span class="formula-index">4</span> Distribuição de macronutrientes</h3>
+          <p class="formula-expr">gramas = (TDEE × % do macro) ÷ kcal por grama</p>
+          <p>Proteínas e carboidratos têm 4 kcal por grama; gorduras têm 9 kcal por grama. As porcentagens mudam de acordo com o objetivo escolhido, priorizando mais proteína em fases de emagrecimento, por exemplo.</p>
+        </article>
+
+        <article class="formula-card reveal">
+          <h3><span class="formula-index">5</span> Necessidade de hidratação</h3>
+          <p class="formula-expr">água (L) = peso (kg) × 35 ml ÷ 1000</p>
+          <p>Regra prática amplamente usada em orientação nutricional para estimar o consumo diário de água a partir do peso corporal.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="como-funciona">
+    <div class="wrap">
+      <p class="section-kicker">O passo a passo</p>
+      <h2 class="reveal">Da pergunta ao resultado, em quatro etapas</h2>
+      <ol class="how-steps">
+        <li class="reveal">
+          <span class="step-leaf" aria-hidden="true">1</span>
+          <h3>Você conta pra gente</h3>
+          <p>Altura, peso, idade, rotina de sono, hidratação, hábitos alimentares e objetivo — tudo em um formulário curto.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-leaf" aria-hidden="true">2</span>
+          <h3>O sistema calcula</h3>
+          <p>IMC, gasto calórico, macronutrientes e hidratação são calculados instantaneamente com as fórmulas da seção de metodologia.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-leaf" aria-hidden="true">3</span>
+          <h3>Você recebe orientações</h3>
+          <p>Sugestões práticas, organizadas por tema, ajustadas ao seu objetivo, à sua rotina e às suas restrições alimentares.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ratings" id="avaliacoes">
+    <div class="wrap">
+      <p class="section-kicker">Sua opinião</p>
+      <h2 class="reveal">O que você achou do Nutri Vida?</h2>
+      <p class="ratings-lead reveal">Deixe uma nota e, se quiser, um comentário. Sua avaliação fica guardada aqui na feira e ajuda a turma a entender o que funcionou e o que pode melhorar.</p>
+
+      <div class="ratings-grid">
+        <form id="rating-form" class="rating-form reveal" novalidate>
+          <div class="field">
+            <label id="nota-label">Sua nota</label>
+            <div class="star-input" role="radiogroup" aria-labelledby="nota-label">
+              <input type="radio" id="nota-5" name="nota" value="5">
+              <label for="nota-5" title="5 estrelas">★</label>
+              <input type="radio" id="nota-4" name="nota" value="4">
+              <label for="nota-4" title="4 estrelas">★</label>
+              <input type="radio" id="nota-3" name="nota" value="3">
+              <label for="nota-3" title="3 estrelas">★</label>
+              <input type="radio" id="nota-2" name="nota" value="2">
+              <label for="nota-2" title="2 estrelas">★</label>
+              <input type="radio" id="nota-1" name="nota" value="1">
+              <label for="nota-1" title="1 estrela">★</label>
+            </div>
+            <p class="field-error" id="nota-error">Escolha uma nota de 1 a 5 estrelas.</p>
+          </div>
+
+          <div class="field">
+            <label for="avaliador-nome">Seu nome <span class="opcional">(opcional)</span></label>
+            <input type="text" id="avaliador-nome" name="nome" maxlength="40" placeholder="Ex: Visitante da feira">
+          </div>
+
+          <div class="field">
+            <label for="avaliador-comentario">Comentário <span class="opcional">(opcional)</span></label>
+            <textarea id="avaliador-comentario" name="comentario" maxlength="300" rows="3" placeholder="Conte o que achou do projeto..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Enviar avaliação</button>
+          <p class="rating-feedback" id="rating-feedback" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="ratings-summary reveal">
+          <div class="ratings-average">
+            <span id="average-value">--</span>
+            <div class="average-stars" id="average-stars" aria-hidden="true"></div>
+            <p id="ratings-count">Nenhuma avaliação ainda</p>
+          </div>
+          <ul class="testimonial-list" id="testimonial-list"></ul>
+        </div>
+      </div>
+
+      <details class="admin-tools">
+        <summary>Ferramentas da equipe</summary>
+        <p>As avaliações ficam salvas apenas neste navegador/dispositivo. Use os botões abaixo no computador da feira para recolher os dados no fim do dia.</p>
+        <div class="admin-actions">
+          <button type="button" class="btn btn-ghost" id="export-csv-btn">Baixar avaliações (.csv)</button>
+          <button type="button" class="btn btn-text" id="clear-ratings-btn">Apagar avaliações salvas</button>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <div class="divider divider-a" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 C 200 60 400 0 600 30 C 800 60 1000 0 1200 30 L1200 60 L0 60 Z"></path></svg>
+  </div>
+
+  <section class="credits" id="equipe">
+    <div class="wrap">
+      <p class="section-kicker section-kicker-light">Feito com dedicação</p>
+      <h2>Obrigado a todos que colocaram a mão na massa</h2>
+      <p class="credits-lead">Este projeto só existe porque uma turma inteira se envolveu — pesquisando, discutindo ideias, testando e revisando cada parte. Um agradecimento especial à turma do <strong>1º ano de Informática para Internet</strong> da <strong>Escola Pedro Ferreira Alves</strong>.</p>
+
+      <ul class="credits-grid">
+        <li>Ana Gabriela</li>
+        <li>Ana Garbi</li>
+        <li>Anna Victoria</li>
+        <li>Benjamin</li>
+        <li>Breno</li>
+        <li>Caio Scapim</li>
+        <li>Davi Alves</li>
+        <li>Diogo</li>
+        <li>Enri</li>
+        <li>Enzo</li>
+        <li>Guilherme</li>
+        <li>Heloyse</li>
+        <li>Henrique Brunca</li>
+        <li>Henrique Manoel</li>
+        <li>Isaac Tenório</li>
+        <li>Julia</li>
+        <li>Lavinia</li>
+        <li>Leticia Cardoso</li>
+        <li>Livia Clara</li>
+        <li>Lorena Blessa</li>
+        <li>Luca</li>
+        <li>Luis Otavio</li>
+        <li>Maissa Santini</li>
+        <li>Maria Eduarda</li>
+        <li>Mariana</li>
+        <li>Mateus Henrique Tomiazzi</li>
+        <li>Matheus Lobo</li>
+        <li>Matheus Swedic</li>
+        <li>Miguel Sereni</li>
+        <li>Miguel Vilhena</li>
+        <li>Mirrela</li>
+        <li>Rafael Abilio</li>
+        <li>Ryan Morozesk</li>
+        <li>Vinicius</li>
+        <li>Vitoria Meireles</li>
+
+      </ul>
+
+      <p class="credits-signoff">Obrigado a todos que Participaram.  💚</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="footer-brand">nutri<span class="brand-word-accent">vida</span></p>
+    <p class="footer-meta">1º ano · Informática para Internet — Escola Pedro Ferreira Alves</p>
+  </div>
+</footer>
+
+<button type="button" class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
